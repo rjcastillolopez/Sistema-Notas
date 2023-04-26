@@ -1,0 +1,302 @@
+USE db_sistemanotas
+GO
+
+INSERT INTO TB_CAREER
+    (ID_CAREER, NAME)
+VALUES
+    ('IN', 'INGENIERÍA INFORMÁTICA Y DE SISTEMAS'),
+    ('IL', 'INGENIERÍA ELECTRÓNICA'),
+    ('IC', 'INGENIERÍA CIVIL'),
+    ('CO', 'CONTABILIDAD'),
+    ('PS', 'PSICOLOGIA'),
+    ('IQ', 'INGENIERÍA QUIMICA')
+GO
+
+INSERT INTO TB_STUDENT
+    (ID_STUDENT, NAME, LASTNAME, DNI, EMAIL, PHONE, ADDRESS, ID_CAREER)
+VALUES
+    ('170110', 'JUAN', 'PEREZ GOMEZ', '47654321', '170110@unsaac.edu.pe', '987654321', 'AV. LA CULTURA 90', 'IN'),
+    ('173435', 'MARIA', 'ARCE COSIO', '48532110', '173434@unsaac.edu.pe', '980324254', 'AV. TUPAC AMARU 560', 'IN'),
+    ('183242', 'MIGUEL', 'DUEÑAS IBARRA', '48655432', '183242@unsaac.edu.pe', '980324254', 'JR. LIBERTAD 10', 'IN'),
+    ('194321', 'JULIO', 'CHAVEZ ROSAS', '46424568', '194321@unsaac.edu.pe', '990345321', 'AV, EL SOL 100', 'IN'),
+    ('120342', 'ALBERTO', 'JIMENEZ PEREIRA', '49860023', '120342@unsaac.edu.pe', '993245675', 'CALLE BOLOGNESI 120', 'IN'),
+    ('204532', 'DANTE', 'MUÑOZ CONDORI', '41294029', '204532@unsaac.edu.pe', '935488920', 'CALLE LIMA 346', 'IN'),
+    ('175340', 'SABINO', 'MONTEZ ESTRADA', '46940024', '175340@unsaac.edu.pe', '950945882', 'JR. PUNO 39', 'IN'),
+    ('186049', 'ELIANA', 'LOPEZ MENDOZA', '42049868', '186049@unsaac.edu.pe', '910498688', 'AV. PROCURADORES 234', 'IN'),
+    ('180012', 'MAURO', 'QUISPE TINTA', '48958847', '180012@unsaac.edu.pe', '984387275', 'CALLE ROSAS 85', 'IN'),
+    ('216785', 'SOFIA', 'GUTIERREZ TITO', '45903291', '216785@unsaac.edu.pe', '945884034', 'AV. EL SOL 234', 'IN')
+GO
+
+INSERT INTO TB_TEACHER
+    (ID_TEACHER, NAME, LASTNAME, DNI, EMAIL, PHONE, ADDRESS)
+VALUES
+    ('15940', 'JAIRO', 'ZEGARRA ESPINOZA', '41345456', '15940@unsaac.edu.pe', '974569382', 'AV. JORGE CHAVEZ 234'),
+    ('18430', 'ENRIQUE', 'GARCIA YUPANQUI', '42345677', '18430@unsaac.edu.pe', '984399284', 'AV. TUPAC AMARU 45'),
+    ('11234', 'SEBASTIAN', 'CUSI SOTO', '40129856', '11234@unsaac.edu.pe', '950938820', 'JR. LOS SAUCES 100'),
+    ('15453', 'FABIANA', 'TORRES VARGAS', '49244566', '15453@unsaac.edu.pe', '984103982', 'AV, MIGUEL GRAU 50'),
+    ('17549', 'CALISTO', 'COSIO PEÑA', '41234563', '17549@unsaac.edu.pe', '953009287', 'CALLE SAN AGUSTIN 264')
+GO
+
+INSERT INTO TB_SEMESTER
+    (DENOMINATION, DATE_START, DATE_END)
+VALUES
+    ('2022-II', '2022-10-18', '2023-02-05'),
+    ('2022-V', '2023-02-15', '2023-04-10'),
+    ('2023-I', '2023-04-18', '2023-10-15')
+GO
+
+INSERT INTO TB_COURSE
+    (ID_COURSE, NAME, ID_TEACHER, ID_SEMESTER)
+VALUES
+    ('IF234AIN', 'PROGRAMACIÓN I', '15940', 3),
+    ('IF234BIN', 'PROGRAMACIÓN I', '18430', 3),
+    ('IF309AIN', 'PROGRAMACIÓN II', '11234', 3),
+    ('IF456AIN', 'DESARROLLO DE SOFTWARE', '15453', 3),
+    ('IF659AIN', 'BASE DE DATOS', '17549', 3)
+GO
+
+INSERT INTO TB_SUBJECT
+    (ID_COURSE, NAME)
+VALUES
+    ('IF234AIN', 'TOPIC A'),
+    ('IF234AIN', 'TOPIC B'),
+    ('IF234AIN', 'TOPIC C'),
+    ('IF234AIN', 'TOPIC D'),
+    ('IF234AIN', 'TOPIC E'),
+    ('IF309AIN', 'TOPIC A'),
+    ('IF309AIN', 'TOPIC B'),
+    ('IF309AIN', 'TOPIC C'),
+    ('IF309AIN', 'TOPIC D'),
+    ('IF309AIN', 'TOPIC E'),
+    ('IF456AIN', 'TOPIC A'),
+    ('IF456AIN', 'TOPIC B'),
+    ('IF456AIN', 'TOPIC C'),
+    ('IF456AIN', 'TOPIC D'),
+    ('IF456AIN', 'TOPIC E'),
+    ('IF659AIN', 'TOPIC A'),
+    ('IF659AIN', 'TOPIC B'),
+    ('IF659AIN', 'TOPIC C'),
+    ('IF659AIN', 'TOPIC D'),
+    ('IF659AIN', 'TOPIC E')
+GO
+
+INSERT INTO TB_STUDENT_COURSE
+    (ID_STUDENT, ID_COURSE, GRADE_1, GRADE_2, GRADE_3, GRADE_4, FINAL)
+VALUES
+    ('170110', 'IF234AIN', 14.50, 16.00, 15.00, 18.00, 15.88),
+    ('173435', 'IF234AIN', 12.00, 10.00, 14.00, 16.00, 13.00),
+    ('183242', 'IF234AIN', 15.50, 16.00, 15.00, 17.00, 15.88),
+    ('194321', 'IF234AIN', 10.00, 12.00, 15.00, 14.00, 12.75),
+    ('120342', 'IF234AIN', 17.00, 14.00, 15.00, 17.00, 15.75),
+    ('204532', 'IF456AIN', 13.00, 15.60, 16.00, 18.00, 15.50),
+    ('175340', 'IF456AIN', 10.50, 13.00, 14.50, 16.00, 13.50),
+    ('186049', 'IF456AIN', 14.00, 16.50, 15.50, 16.00, 15.50),
+    ('180012', 'IF456AIN', 17.00, 16.00, 17.00, 17.00, 16.75),
+    ('216785', 'IF456AIN', 15.00, 14.00, 16.00, 16.50, 15.38),
+    ('186049', 'IF659AIN', 16.50, 17.00, 18.00, 17.60, 17.28),
+    ('180012', 'IF659AIN', 10.50, 12.00, 13.50, 14.00, 12.50),
+    ('216785', 'IF659AIN', 12.00, 15.00, 14.00, 13.50, 13.63)
+GO
+
+INSERT INTO TB_EXAM
+    (NAME, DATE, DURATION)
+VALUES
+    ('PRIMER EXAMEN PARCIAL', '2022-10-30', 2),
+    ('SEGUNDO EXAMEN PARCIAL', '2022-11-28', 2),
+    ('TERCER EXAMEN PARCIAL', '2023-01-05', 2),
+    ('EXAMEN SUSTITUTORIO', '2023-02-10', 2),
+    ('PRIMER EXAMEN PARCIAL', '2022-10-29', 2),
+    ('SEGUNDO EXAMEN PARCIAL', '2022-11-30', 2),
+    ('TERCER EXAMEN PARCIAL', '2022-01-03', 2),
+    ('EXAMEN SUSTITUTORIO', '2023-02-09', 2)
+GO
+
+INSERT INTO TB_SUBJECT_EXAM
+    (ID_EXAM, ID_SUBJECT)
+VALUES
+    (1, 1),
+    (1, 2),
+    (2, 3),
+    (2, 4),
+    (3, 5),
+    (4, 3),
+    (4, 4),
+    (4, 5),
+    (5, 6),
+    (6, 7),
+    (6, 8),
+    (7, 9),
+    (7, 10),
+    (8, 9),
+    (8, 10)
+GO
+
+INSERT INTO TB_QUESTION_EXAM
+    (ID_EXAM, QUESTION)
+VALUES
+    (1, 'QUESTION 1'),
+    (1, 'QUESTION 2'),
+    (1, 'QUESTION 3'),
+    (1, 'QUESTION 4'),
+    (1, 'QUESTION 5'),
+    (2, 'QUESTION 6'),
+    (2, 'QUESTION 7'),
+    (2, 'QUESTION 8'),
+    (2, 'QUESTION 9'),
+    (2, 'QUESTION 10')
+GO
+
+INSERT INTO TB_ALTERNATIVE_QUESTION
+    (ID_QUESTION_EXAM, ALTERNATIVE, DESCRIPTION, ANSWER)
+VALUES
+    (1, 'A', 'DESCRIPTION A', 0),
+    (1, 'B', 'DESCRIPTION B', 1),
+    (1, 'C', 'DESCRIPTION C', 0),
+    (1, 'D', 'DESCRIPTION D', 0),
+    (1, 'E', 'DESCRIPTION E', 0),
+    (2, 'A', 'DESCRIPTION A', 1),
+    (2, 'B', 'DESCRIPTION B', 0),
+    (2, 'C', 'DESCRIPTION C', 0),
+    (2, 'D', 'DESCRIPTION D', 0),
+    (2, 'E', 'DESCRIPTION E', 0),
+    (3, 'A', 'DESCRIPTION A', 0),
+    (3, 'B', 'DESCRIPTION B', 0),
+    (3, 'C', 'DESCRIPTION C', 1),
+    (3, 'D', 'DESCRIPTION D', 0),
+    (3, 'E', 'DESCRIPTION E', 0),
+    (4, 'A', 'DESCRIPTION A', 1),
+    (4, 'B', 'DESCRIPTION B', 0),
+    (4, 'C', 'DESCRIPTION C', 0),
+    (4, 'D', 'DESCRIPTION D', 0),
+    (4, 'E', 'DESCRIPTION E', 0),
+    (5, 'A', 'DESCRIPTION A', 0),
+    (5, 'B', 'DESCRIPTION B', 1),
+    (5, 'C', 'DESCRIPTION C', 0),
+    (5, 'D', 'DESCRIPTION D', 0),
+    (5, 'E', 'DESCRIPTION E', 1),
+    (6, 'A', 'DESCRIPTION A', 0),
+    (6, 'B', 'DESCRIPTION B', 0),
+    (6, 'C', 'DESCRIPTION C', 0),
+    (6, 'D', 'DESCRIPTION D', 1),
+    (6, 'E', 'DESCRIPTION E', 0),
+    (7, 'A', 'DESCRIPTION A', 0),
+    (7, 'B', 'DESCRIPTION B', 0),
+    (7, 'C', 'DESCRIPTION C', 1),
+    (7, 'D', 'DESCRIPTION D', 0),
+    (7, 'E', 'DESCRIPTION E', 0),
+    (8, 'A', 'DESCRIPTION A', 1),
+    (8, 'B', 'DESCRIPTION B', 0),
+    (8, 'C', 'DESCRIPTION C', 0),
+    (8, 'D', 'DESCRIPTION D', 0),
+    (8, 'E', 'DESCRIPTION E', 0),
+    (9, 'A', 'DESCRIPTION A', 0),
+    (9, 'B', 'DESCRIPTION B', 1),
+    (9, 'C', 'DESCRIPTION C', 0),
+    (9, 'D', 'DESCRIPTION D', 0),
+    (9, 'E', 'DESCRIPTION E', 0),
+    (10, 'A', 'DESCRIPTION A', 0),
+    (10, 'B', 'DESCRIPTION B', 0),
+    (10, 'C', 'DESCRIPTION C', 0),
+    (10, 'D', 'DESCRIPTION D', 0),
+    (10, 'E', 'DESCRIPTION E', 1)
+GO
+
+INSERT INTO TB_QUESTION_STUDENT
+    (ID_STUDENT, ID_QUESTION_EXAM, ALTERNATIVE)
+VALUES
+    ('170110', 1, 'A'),
+    ('170110', 2, 'B'),
+    ('170110', 3, 'A'),
+    ('170110', 4, 'D'),
+    ('170110', 5, 'C'),
+    ('170110', 6, 'B'),
+    ('170110', 7, 'A'),
+    ('170110', 8, 'E'),
+    ('170110', 9, 'A'),
+    ('170110', 10, 'E'),
+    ('173435', 1, 'C'),
+    ('173435', 2, 'B'),
+    ('173435', 3, 'A'),
+    ('173435', 4, 'D'),
+    ('173435', 5, 'B'),
+    ('173435', 6, 'E'),
+    ('173435', 7, 'B'),
+    ('173435', 8, 'C'),
+    ('173435', 9, 'A'),
+    ('173435', 10, 'E'),
+    ('183242', 1, 'B'),
+    ('183242', 2, 'A'),
+    ('183242', 3, 'D'),
+    ('183242', 4, 'E'),
+    ('183242', 5, 'A'),
+    ('183242', 6, 'B'),
+    ('183242', 7, 'B'),
+    ('183242', 8, 'C'),
+    ('183242', 9, 'A'),
+    ('183242', 10, 'A'),
+    ('194321', 1, 'A'),
+    ('194321', 2, 'C'),
+    ('194321', 3, 'D'),
+    ('194321', 4, 'E'),
+    ('194321', 5, 'A'),
+    ('194321', 6, 'B'),
+    ('194321', 7, 'C'),
+    ('194321', 8, 'D'),
+    ('194321', 9, 'D'),
+    ('194321', 10, 'B'),
+    ('120342', 1, 'C'),
+    ('120342', 2, 'B'),
+    ('120342', 3, 'E'),
+    ('120342', 4, 'D'),
+    ('120342', 5, 'A'),
+    ('120342', 6, 'A'),
+    ('120342', 7, 'C'),
+    ('120342', 8, 'B'),
+    ('120342', 9, 'E'),
+    ('120342', 10, 'B')
+GO
+
+INSERT INTO TB_INTERVAL
+    (DESCRIPTION)
+VALUES
+    ('10m'),
+    ('15m'),
+    ('30m'),
+    ('1h'),
+    ('2h'),
+    ('6h'),
+    ('1d'),
+    ('2d'),
+    ('7d'),
+    ('1w'),
+    ('1mo'),
+    ('2mo')
+GO
+
+
+SELECT *
+FROM TB_CAREER
+SELECT *
+FROM TB_STUDENT
+SELECT *
+FROM TB_TEACHER
+SELECT *
+FROM TB_COURSE
+SELECT *
+FROM TB_SUBJECT
+SELECT *
+FROM TB_SEMESTER
+SELECT *
+FROM TB_STUDENT_COURSE
+SELECT *
+FROM TB_EXAM
+SELECT *
+FROM TB_SUBJECT_EXAM
+SELECT *
+FROM TB_QUESTION_EXAM
+SELECT *
+FROM TB_ALTERNATIVE_QUESTION
+SELECT *
+FROM TB_QUESTION_STUDENT
+SELECT *
+FROM TB_REVIEW
